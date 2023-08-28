@@ -6,7 +6,7 @@ chardet==5.1.0
 charset-normalizer==3.2.0
 click==8.1.6
 colorama==0.4.6
-flask==2.3.2
+flask==2.2.5
 flask-dance==7.0.0
 flask-debugtoolbar==0.13.1
 flask-login==0.6.2
