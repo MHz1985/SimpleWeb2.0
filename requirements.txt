@@ -69,3 +69,4 @@ wincertstore==0.2
 wtforms==3.0.1
 xz==5.4.2
 zlib==1.2.13
+LinkExchange.TurboGears
