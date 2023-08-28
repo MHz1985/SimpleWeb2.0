@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<!-- YouTube or Website - CodingLab -->
+<html lang="en">
+  <head>
+    <!-- <meta charset="UTF-8" /> -->
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-15">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flask App Demo</title>
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <!-- Fontawesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <nav class="sidebar"> <!-- Sidebar  -->
+      <a href="#" class="logo">Dashboard</a>
+
+      <div class="menu-content">
+        <ul class="menu-items">
+          <div class="menu-title">Rankings</div>
+
+          <li class="item">
+            <a href="{{url_for('cypherquery')}}">Cypher Query</a>
+          </li>
+
+          <li class="item">
+            <a href="#"> link 1</a>
+          </li>
+
+          <li class="item">
+            <a href="#">link 2</a>
+          </li>
+
+          <li class="item">
+            <a href="#">link 3</a>
+          </li>
+
+          <li class="item">
+            <a href="#">link 4</a>
+          </li>
+
+
+
+          
+        </ul>
+      </div>
+    </nav>
+
+<!--  -->
+
+<!--  -->
+
+
+    <!-- <nav class="navbar border-bottom border-body" style="background-color: #1c4766;" >  -->
+      <!-- <i class="fa-solid fa-bars" id="sidebar-close">  </i> -->
+      <!-- <a class="btn" href=#> Link1 </a> -->
+      <nav class="navbar navbar-expand-lg fixed-top" style="background-color: #b1aec0; color: #9db3af;">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"> </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto ">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{{url_for('index')}}">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" style="font-size: 20px;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                  Global & General
+                </a>
+                <ul class="dropdown-menu">
+                  <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">University</a>
+                    <ul class="dropdown-menu dropright">
+                      <li><a class="dropdown-item" href="{{url_for('global_uni_qs_2024')}}">QS 2024 Ranking</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="{{url_for('global_uni_qs_2023')}}">QS 2023 Ranking</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="{{url_for('global_uni_shanghai')}}">Shanghai (Genral) Ranking</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="{{url_for('global_uni_shanghai_clinical_med')}}">Shanghai (Clinical Medicine) Ranking</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="{{url_for('global_uni_the')}}">Times Higher Education Ranking</a></li>
+                      </li>
+                    </ul>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="{{url_for('global_hospitals')}}">Hospital</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="{{url_for('global_institutes')}}">Institute</a></li>
+                </ul>
+              </li>
+
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" style="font-size: 20px;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                  Global & Specialized
+                </a>
+                <ul class="dropdown-menu">
+                  <!-- <li><a class="dropdown-item" href="#">Hospital</a></li> -->
+                  <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">University</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="{{url_for('global_uni_sustain')}}">Sustainability</a></li>
+                      </li>
+                    </ul>
+                  <li><hr class="dropdown-divider"></li>
+                  <!--  2 level -->
+                  <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">Hospital</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="{{url_for('global_hospitals_cardiacSurgery')}}">Cardiac Surgery</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="{{url_for('global_hospitals_cardiology')}}">Cardiology</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="{{url_for('global_hospitals_neurology')}}">Neurology</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="{{url_for('global_hospitals_neurosurgery')}}">Neurosurgery</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="{{url_for('global_hospitals_oncology')}}">Oncology</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="{{url_for('global_hospitals_smart')}}">Smart Hospitals</a></li>
+                      </li>
+                    <!--  -->
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+<!--  -->
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" style="font-size: 20px;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                  Regional & General
+                </a>
+                
+                <ul class="dropdown-menu">
+                    <ul class="dropdown-menu">
+
+              </li>
+                </ul>
+                <!-- 2 level -->
+                <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">Africa</a>
+                  <ul class="dropdown-menu">
+                    <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">University</a>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{{url_for('africa_uni_qs')}}">QS Ranking (Africa)</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="{{url_for('africa_uni_the')}}">THE Ranking (Africa)</a></li>
+                      </ul>
+                    </li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="{{url_for('africa_hospitals')}}">Hospital</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="{{url_for('africa_institutes')}}">Institue</a></li>
+                  </ul>
+                </li>
+                <!--  -->
+                <li><hr class="dropdown-divider"></li>
+                 <!-- 3 level -->
+                <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">Asia</a>
+                  <ul class="dropdown-menu">
+                    
+                    <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">China</a>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{{url_for('china_uni')}}"> University</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="{{url_for('china_hospitals')}}">Hospital</a></li>
+                      </ul>
+                    </li>
+                    <!--  -->
+                    <li><hr class="dropdown-divider"></li>
+                      <!--  -->
+                    <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">Hong Kong</a>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{{url_for('hong_kong_uni_shanghai')}}">University </a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="{{url_for('hong_kong_institutes')}}">Institute</a></li>
+                      </ul>
+                    </li>
+                    <!--  -->
+                    <li><hr class="dropdown-divider"></li>
+                    <!--  -->
+                  <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">Taiwan</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="{{url_for('taiwan_uni_shanghai')}}">University</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="{{url_for('tiwan_institutes')}}">Institute </a></li>
+                    </ul>
+                  </li>
+                  <!--  -->
+                  </ul>
+                </li>
+                <!--  -->
+                <li><hr class="dropdown-divider"></li>
+                 <!--  -->
+                <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">Europe</a>
+                  <ul class="dropdown-menu">
+                    <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">Germany</a>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{{url_for('germany_uni_qs')}}">University </a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="{{url_for('germany_hospitals')}}">Hospital</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <!--  -->
+                <li><hr class="dropdown-divider"></li>
+                <!--  -->
+               <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">North America</a>
+                 <ul class="dropdown-menu">
+                   <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">USA</a>
+                     <ul class="dropdown-menu">
+                      <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">University</a>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="{{url_for('usa_uni_qs')}}">QS Ranking (US)</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="{{url_for('usa_uni_newsWorld')}}">News and World Report (US)</a></li>
+                        </ul>
+                       <li><hr class="dropdown-divider"></li>
+                       <li><a class="dropdown-item" href="{{url_for('usa_hospitals')}}">Hospital</a></li>
+                      <!-- </ul> -->
+                     </ul>
+                   </li>
+                 </ul>
+               </li>
+               <!--  -->
+               <li><hr class="dropdown-divider"></li>
+               <!--  -->
+              <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">South America</a>
+                <ul class="dropdown-menu">
+                  <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">Brazil</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="{{url_for('brazil_uni_the')}}">University</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="{{url_for('brazil_hospitals')}}">Hospital</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+
+
+
+
+                </ul>
+              </li>
+
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" style="font-size: 20px;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                  Regional & Specialized
+                </a>
+                <ul class="dropdown-menu">
+                  <ul class="dropdown-menu">
+
+            </li>
+              </ul>
+              <!-- 2 level -->
+              
+               <!--  -->
+              <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">Europe</a>
+                <ul class="dropdown-menu">
+                  <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">Germany</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="{{url_for('germany_hospitals_brainTumor')}}">Brain Tumor </a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="{{url_for('germany_hospitals_breastCancer')}}">Breast Cancer</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="{{url_for('germany_hospitals_cardiology')}}">Cardiology</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="{{url_for('germany_hospitals_lungTumor')}}">Lung Tumor</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="{{url_for('germany_hospitals_stroke')}}">Stroke</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <!--  -->
+              <li><hr class="dropdown-divider"></li>
+              <!--  -->
+             <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">North America</a>
+               <ul class="dropdown-menu">
+                 <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">USA</a>
+                   <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="{{url_for('usa_hospitals_neurologyNeurosurgery')}}">Neurology - Neurosurgery </a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="{{url_for('usa_hospitals_pulmonologyLungSurgery')}}">Pulmonology - Lung Surgery</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="{{url_for('usa_hospitals_cancer')}}">Cancer</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="{{url_for('usa_hospitals_cardiology')}}">Cardiology</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="{{url_for('usa_hospitals_rheumatology')}}">Rheumatology</a></li>
+                   </ul>
+                 </li>
+               </ul>
+             </li>
+             <!--  -->
+             
+                </ul>
+              </li>
+
+
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="ChatGPT Search" aria-label="Search">
+              <button class="btn btn-outline-success text-nowrap" type="submit">ChatGPT Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+     </div>
+    <!-- </nav> -->
+
+
+      <!-- <h1>Admin Dashboard Content</h1> -->
+      <div class = "main">
+        <main>
+
+        {% block content %} <!-- name of block: content -->
+
+        {% endblock %}
+    
+      </main>
+      <div class="footer">
+        <p>&copy; SMH Zadeh 2023 &copy;</p>
+      </div>
+      </div>
+   
+ 
+
+  
+
+
+
+    <script src="../static/js/script.js"></script>
+  </body>
+</html>

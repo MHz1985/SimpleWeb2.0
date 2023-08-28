@@ -1,0 +1,40 @@
+{% extends "base.html"%}
+
+{% block content %} <!-- name of block to extend: content -->
+
+
+<h4>
+    Germany's Hospital Ranking in Lung Tumor
+</h4>
+
+<br>
+
+<h4>Map</h4>
+
+{{ iframe | safe }}
+
+<br>
+<h4> Table: </h4> <br>
+
+<table border="1" class="dataframe table table-stripped"> 
+    <thead> 
+      <tr style="text-align: center;"> 
+        {% for data in html_data[0] %}
+        <th align="center"> {{data}} </th> 
+        {% endfor %}
+      </tr> 
+    </thead> 
+    <tbody> 
+        {% for line in html_data[1:] %} 
+      <tr> 
+        <th align="center">{{line[0]}}</th>
+            {% for data in line[1:]%}
+            <td> {{data}} </td> 
+            {% endfor %}
+
+      </tr> 
+      {% endfor %}
+    </tbody> 
+  </table>
+
+{% endblock %}
