@@ -1,7 +1,6 @@
 alembic
 blinker
 branca
-bzip2
 ca-certificates
 certifi
 chardet
