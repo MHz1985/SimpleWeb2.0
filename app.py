@@ -15,7 +15,7 @@ logging.basicConfig(level=logging.INFO)
 temp_dir = "templates"
 
 app = Flask(__name__,template_folder=temp_dir,static_folder='static')
-graph = Graph("bolt://localhost:7687", auth=("neo4j", "12345678"))
+# graph = Graph("bolt://localhost:7687", auth=("neo4j", "12345678"))
 
 app = Flask(__name__)
 
