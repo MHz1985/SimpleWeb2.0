@@ -45,7 +45,7 @@ pip
 py2neo
 pygments
 pyparsing
-python=
+python
 python-dateutil
 python-editor
 pytz
