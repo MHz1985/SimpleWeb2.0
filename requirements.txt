@@ -27,7 +27,7 @@ itsdangerous==2.1.2
 jinja2==3.1.2
 json2html==1.3.0
 lazy==1.5
-libffi==3.4.4
+libffi
 mako==1.2.4
 markupsafe==2.1.3
 monotonic==1.6
