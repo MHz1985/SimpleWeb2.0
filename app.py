@@ -24,11 +24,11 @@ app = Flask(__name__)
 # RETURN count(r) as count
 # """
 
-query="""
-MATCH (author:Author)-[r1:Wrote]->(article:Article)-[r2:Published_in]->(publisher:Publisher)
-WHERE publisher.fullJournalName='International journal of molecular sciences'
-RETURN author,r1,article,r2,publisher
-"""
+# query="""
+# MATCH (author:Author)-[r1:Wrote]->(article:Article)-[r2:Published_in]->(publisher:Publisher)
+# WHERE publisher.fullJournalName='International journal of molecular sciences'
+# RETURN author,r1,article,r2,publisher
+# """
 
 # query="""
 # MATCH (a:Author)
@@ -53,15 +53,17 @@ def index():
 
 @app.route('/cypherquery')
 def cypherquery():
-    query_result = graph.run(query)
-    app.logger.info(f"MHz, type is {type(query_result)}")
-    df=query_result.to_data_frame()
-    df.to_excel('neo4jqu.xlsx')
-    # df_data = get_full_df_html(df)
-    df_data = get_short_df_html(df) #encoding="utf-8"
-    html_table = str(df_data.to_html())
-    html_data = get_table_html_data(html_table)
+    # query_result = graph.run(query)
+    # app.logger.info(f"MHz, type is {type(query_result)}")
+    # df=query_result.to_data_frame()
+    # df.to_excel('neo4jqu.xlsx')
+    # # df_data = get_full_df_html(df)
+    # df_data = get_short_df_html(df) #encoding="utf-8"
+    # html_table = str(df_data.to_html())
+    # html_data = get_table_html_data(html_table)
     # html_table = df_data
+    html_data=''
+    query = ''
     return render_template("cypherquery.html", html_data=html_data, query=query)
 
 @app.route('/global_uni_qs_2024')
