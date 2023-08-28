@@ -51,7 +51,7 @@ sqlalchemy==2.0.19
 sqlalchemy-utils==0.41.1
 tk
 typing-extensions==4.7.1
-tzdata==2023c
+tzdata==2023.3
 urllib3==2.0.3
 urlobject==2.4.3
 vc==14.2
