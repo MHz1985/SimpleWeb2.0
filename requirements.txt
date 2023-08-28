@@ -62,3 +62,4 @@ wheel==0.38.4
 wincertstore==0.2
 wtforms==3.0.1
 gunicorn==19.7.1
+openpyxl
